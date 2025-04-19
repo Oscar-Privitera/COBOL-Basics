@@ -12,32 +12,32 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 NET-PRICE        PIC 9(3)V99.
-       01 VAT-RATE         PIC 9V99.
-       01 VAT-AMOUNT       PIC 9(3)V99.
-       01 TOTAL-PRICE      PIC 9(4)V99.
+       01 WS-NET-PRICE        PIC 9(3)V99.
+       01 WS-VAT-RATE         PIC 9V99.
+       01 WS-VAT-AMOUNT       PIC 9(3)V99.
+       01 WS-TOTAL-PRICE      PIC 9(4)V99.
 
-       01 NET-FORMATTED    PIC Z(3).99.
-       01 VAT-FORMATTED    PIC Z(3).99.
-       01 TOTAL-FORMATTED  PIC Z(4).99.
+       01 WS-NET-FORMATTED    PIC Z(3).99.
+       01 WS-VAT-FORMATTED    PIC Z(3).99.
+       01 WS-TOTAL-FORMATTED  PIC Z(4).99.
 
        PROCEDURE DIVISION.
            DISPLAY "Enter the net price (before VAT): ".
-           ACCEPT NET-PRICE.
+           ACCEPT WS-NET-PRICE.
 
            DISPLAY "Enter the VAT rate (e.g. 0.20 for 20%): ".
-           ACCEPT VAT-RATE.
+           ACCEPT WS-VAT-RATE.
 
-           COMPUTE VAT-AMOUNT = NET-PRICE * VAT-RATE.
-           COMPUTE TOTAL-PRICE = NET-PRICE + VAT-AMOUNT.
+           COMPUTE WS-VAT-AMOUNT = WS-NET-PRICE * WS-VAT-RATE.
+           COMPUTE WS-TOTAL-PRICE = WS-NET-PRICE + WS-VAT-AMOUNT.
 
-           MOVE NET-PRICE TO NET-FORMATTED.
-           MOVE VAT-AMOUNT TO VAT-FORMATTED.
-           MOVE TOTAL-PRICE TO TOTAL-FORMATTED.
+           MOVE WS-NET-PRICE TO WS-NET-FORMATTED.
+           MOVE WS-VAT-AMOUNT TO WS-VAT-FORMATTED.
+           MOVE WS-TOTAL-PRICE TO WS-TOTAL-FORMATTED.
 
            DISPLAY "Invoice summary:".
-           DISPLAY "Net price : " NET-FORMATTED.
-           DISPLAY "VAT       : " VAT-FORMATTED.
-           DISPLAY "Total     : " TOTAL-FORMATTED.
+           DISPLAY "Net price : " WS-NET-FORMATTED.
+           DISPLAY "VAT       : " WS-VAT-FORMATTED.
+           DISPLAY "Total     : " WS-TOTAL-FORMATTED.
 
            STOP RUN.

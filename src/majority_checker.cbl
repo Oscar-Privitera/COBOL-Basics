@@ -12,29 +12,29 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 FIRSTNAME  PIC X(20).
-       01 AGE        PIC 99.
-       01 RESPONSE   PIC X(50).
+       01 WS-FIRSTNAME  PIC X(20).
+       01 WS-AGE        PIC 99.
+       01 WS-RESPONSE   PIC X(50).
 
        PROCEDURE DIVISION.
            DISPLAY "Enter your first name: ".
-           ACCEPT FIRSTNAME.
+           ACCEPT WS-FIRSTNAME.
 
            DISPLAY "Enter your age: ".
-           ACCEPT AGE.
+           ACCEPT WS-AGE.
 
-           IF AGE >= 18
+           IF WS-AGE >= 18
                STRING "Hello " DELIMITED BY SIZE
-                      FIRSTNAME DELIMITED BY SPACE
+                      WS-FIRSTNAME DELIMITED BY SPACE
                       ", you are an adult." DELIMITED BY SIZE
-                      INTO RESPONSE
+                      INTO WS-RESPONSE
            ELSE
                STRING "Hello " DELIMITED BY SIZE
-                      FIRSTNAME DELIMITED BY SPACE
+                      WS-FIRSTNAME DELIMITED BY SPACE
                       ", you are a minor." DELIMITED BY SIZE
-                      INTO RESPONSE
+                      INTO WS-RESPONSE
            END-IF
 
-           DISPLAY RESPONSE.
+           DISPLAY WS-RESPONSE.
 
            STOP RUN.

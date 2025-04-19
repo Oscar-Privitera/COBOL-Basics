@@ -1,5 +1,5 @@
        IDENTIFICATION DIVISION.
-       PROGRAM-ID. ASK-NAME-AGE.
+       PROGRAM-ID. ASK-NAME-WS-AGE.
        AUTHOR. Oscar-Privitera.
        DATE-WRITTEN 2025-04-16.
        DATE-COMPILED 2025-04-16.
@@ -11,24 +11,24 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 FIRSTNAME   PIC X(20).
-       01 AGE         PIC 99.
-       01 RESPONSE    PIC X(50).
+       01 WS-FIRSTNAME   PIC X(20).
+       01 WS-AGE         PIC 99.
+       01 WS-RESPONSE    PIC X(50).
 
        PROCEDURE DIVISION.
            DISPLAY "Enter your first name: ".
-           ACCEPT FIRSTNAME.
+           ACCEPT WS-FIRSTNAME.
 
            DISPLAY "Enter your age: ".
-           ACCEPT AGE.
+           ACCEPT WS-AGE.
 
            STRING "Hello " DELIMITED BY SIZE
-                  FIRSTNAME DELIMITED BY SPACE
+                  WS-FIRSTNAME DELIMITED BY SPACE
                   ", you are " DELIMITED BY SIZE
-                  AGE DELIMITED BY SIZE
+                  WS-AGE DELIMITED BY SIZE
                   " years old." DELIMITED BY SIZE
-                  INTO RESPONSE
+                  INTO WS-RESPONSE
 
-           DISPLAY RESPONSE.
+           DISPLAY WS-RESPONSE.
 
            STOP RUN.

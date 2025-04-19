@@ -11,18 +11,18 @@
 
        DATA DIVISION.
        WORKING-STORAGE SECTION.
-       01 NET-PRICE     PIC 9(4)V99.
-       01 VAT-RATE      PIC 9V99.
-       01 GROSS-PRICE   PIC Z(4).99.
+       01 WS-NET-PRICE     PIC 9(4)V99.
+       01 WS-VAT-RATE      PIC 9V99.
+       01 WS-GROSS-PRICE   PIC Z(4).99.
 
        PROCEDURE DIVISION.
            DISPLAY "Enter the net price (before VAT): ".
-           ACCEPT NET-PRICE.
+           ACCEPT WS-NET-PRICE.
 
            DISPLAY "Enter the VAT rate (e.g. 1.2 for 20%): ".
-           ACCEPT VAT-RATE.
+           ACCEPT WS-VAT-RATE.
 
-           COMPUTE GROSS-PRICE = NET-PRICE * VAT-RATE.
-           DISPLAY "The total price including VAT is: " GROSS-PRICE.
+           COMPUTE WS-GROSS-PRICE = WS-NET-PRICE * WS-VAT-RATE.
+           DISPLAY "The total price including VAT is: " WS-GROSS-PRICE.
 
            STOP RUN.

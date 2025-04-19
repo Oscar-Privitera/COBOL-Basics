@@ -11,41 +11,41 @@
        DATA DIVISION.
        WORKING-STORAGE SECTION.
        01 PERSON.
-          05 FIRSTNAME PIC X(20).
-          05 LASTNAME  PIC X(20).
-          05 AGE       PIC Z(3).
-          05 CITY      PIC X(20).
+          05 WS-FIRSTNAME PIC X(20).
+          05 WS-LASTNAME  PIC X(20).
+          05 WS-AGE       PIC Z(3).
+          05 WS-CITY      PIC X(20).
 
        PROCEDURE DIVISION.
            
-           MOVE "Yuka"   TO FIRSTNAME.
-           MOVE "Tadaki" TO LASTNAME.
-           MOVE 32       TO AGE.
-           MOVE "Tokyo"  TO CITY.
+           MOVE "Yuka"   TO WS-FIRSTNAME.
+           MOVE "Tadaki" TO WS-LASTNAME.
+           MOVE 32       TO WS-AGE.
+           MOVE "Tokyo"  TO WS-CITY.
 
            DISPLAY "Before reinitialization :"
-           DISPLAY "Firstname : " FIRSTNAME.
-           DISPLAY "Lastname : " LASTNAME.
-           DISPLAY "Age : " AGE.
-           DISPLAY "City : " CITY.
+           DISPLAY "Firstname : " WS-FIRSTNAME.
+           DISPLAY "Lastname : " WS-LASTNAME.
+           DISPLAY "Age : " WS-AGE.
+           DISPLAY "City : " WS-CITY.
 
-           MOVE SPACES TO FIRSTNAME.
-           MOVE SPACES TO LASTNAME.
-           MOVE ZEROS  TO AGE.
-           MOVE SPACES TO CITY.
+           MOVE SPACES TO WS-FIRSTNAME.
+           MOVE SPACES TO WS-LASTNAME.
+           MOVE ZEROS  TO WS-AGE.
+           MOVE SPACES TO WS-CITY.
 
            DISPLAY "After MOVE SPACES/ZEROS :"
-           DISPLAY "Firstname : " FIRSTNAME.
-           DISPLAY "Lastname : " LASTNAME.
-           DISPLAY "Age : " AGE.
-           DISPLAY "City : " CITY.
+           DISPLAY "Firstname : " WS-FIRSTNAME.
+           DISPLAY "Lastname : " WS-LASTNAME.
+           DISPLAY "Age : " WS-AGE.
+           DISPLAY "City : " WS-CITY.
 
            INITIALIZE PERSON.
 
            DISPLAY "After INITIALIZE :"
-           DISPLAY "Firstname : " FIRSTNAME.
-           DISPLAY "Lastname : " LASTNAME.
-           DISPLAY "Age : " AGE.
-           DISPLAY "City : " CITY.
+           DISPLAY "Firstname : " WS-FIRSTNAME.
+           DISPLAY "Lastname : " WS-LASTNAME.
+           DISPLAY "Age : " WS-AGE.
+           DISPLAY "City : " WS-CITY.
 
            STOP RUN.
